@@ -75,6 +75,29 @@ while True:
     if direction =='RIGHT':
         position[0] += 10
     
+    body.insert(0, list(position))
+    if position[0] == fruit[0] and position[1] == fruit[1]:
+        score += 10
+        spawn = False
+    else:
+        body.pop()
+    
+    if not spawn:
+        fruit = [random.randrange(1, (horizontal//10)) * 10, random.randrange(1, (vertical//10)) * 10]
+        
+    spawn = True
+    screen.fill(black)
+    
+    for pos in body:
+        pygame.draw.rect(screen, green, pygame.Rect(pos[0], pos[1], 10, 10))
+    pygame.draw.rect(screen, white, pygame.Rect(fruit[0],fruit[1],10,10))
+    
+    if position[0] < 0 or position[0] > horizontal-10:
+        game_over()
+    if position[1] < 0 or position[1] > vertical-10:
+        game_over()
+        
+    
         
 
 
