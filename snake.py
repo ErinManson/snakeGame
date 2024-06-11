@@ -97,6 +97,16 @@ while True:
     if position[1] < 0 or position[1] > vertical-10:
         game_over()
         
+    for block in body[1:]:
+        if position[0] == block[0] and position[1] == block[1]:
+            game_over()
+    
+    show_score(1, white, 'times new roman, 20')
+    pygame.display.updates()
+    fps.tick(speed)
+    
+    
+    
     
         
 
