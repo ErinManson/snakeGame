@@ -101,8 +101,8 @@ while True:
         if position[0] == block[0] and position[1] == block[1]:
             game_over()
     
-    show_score(1, white, 'times new roman, 20')
-    pygame.display.updates()
+    show_score(1, white, 'times new roman', 20)
+    pygame.display.update()
     fps.tick(speed)
     
     
